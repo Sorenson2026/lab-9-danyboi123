@@ -10,37 +10,39 @@ using namespace std;
 int main()
 {
 	//variable creation
-	int nameCount;
-	string first, last, name, fileName;
+	int nameCount = 0;
+	string first = "z", last = "A", name, fileName;
 	ifstream inFile;
 
 	//greet user
 	cout << "Hello this program reads names from your file" << endl;
-	cout << "and tells you alphabetical first, last, and name count";
+	cout << "It will tell you the alphabetical first and last name" << endl;
+	cout << "And how many names there are" << endl;
 
 	//get file name
-	cout << "FileName: ";
+	cout << "FileName(include .txt suffix): ";
 	cin >> fileName;
 	inFile.open(fileName);
 
 	//validation for file validation
-	while (inFile.fail())
+	while (!inFile)
 	{
 		//get file name
+		cout << "Invalid file name!" << endl;
 		cout << "FileName: ";
 		cin >> fileName;
 		inFile.open(fileName);
 	}
 
 	//loop to read names.
-	while ()
+	while (getline(inFile, name))
 	{
 		//get name
-		inFile >> name;
+		//getline(inFile, name);
 
-		if (name > first)
+		if (name < first)
 			first = name;
-		else if (name < last)
+		else if (name > last)
 			last = name;
 		
 		//increase nameCount
@@ -48,6 +50,10 @@ int main()
 	}
 	
 	//output processed data
+	cout << first << " comes first" << endl;
+	cout << last << " comes last" << endl;
+	cout << "There are " << nameCount << " names in the file" << endl;
 
+	return 0;
 }
 
