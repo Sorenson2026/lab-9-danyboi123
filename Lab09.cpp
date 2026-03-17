@@ -20,7 +20,7 @@ int main()
 	cout << "And how many names there are" << endl;
 
 	//get file name
-	cout << "FileName(include .txt suffix): ";
+	cout << "FileName (Include .txt suffix): ";
 	cin >> fileName;
 	inFile.open(fileName);
 
