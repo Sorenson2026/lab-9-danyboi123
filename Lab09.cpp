@@ -17,7 +17,7 @@ int main()
 	//greet user
 	cout << "Hello this program reads names from your file" << endl;
 	cout << "It will tell you the alphabetical first and last name" << endl;
-	cout << "And how many names there are" << endl;
+	cout << "And how many names there are." << endl << endl;
 
 	//get file name
 	cout << "FileName (Include .txt suffix): ";
